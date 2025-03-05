@@ -1,6 +1,6 @@
 # Suspense Story Generation System
 
-    This project aims to generate suspense-style novel story  by integrating **Situation Graph**, **Monte Carlo Tree Search (MCTS)**, **Large Language Models (LLMs)**, and various scene evaluation and optimization techniques. The core functions of the project include:
+    This project aims to generate suspense-style novel story  by integrating Situation Graph, Monte Carlo Tree Search (MCTS), Large Language Models (LLMs), and various scene evaluation and optimization techniques. The core functions of the project include:
 
 
 - **Story Path Generation**：Utilize the Neo4j graph database to construct scene relationships and search for the optimal story path based on        MCTS.
@@ -11,16 +11,25 @@
 ---
 
 ## Project Structure
-├── config.py # Global configuration file, including API Key, number of retries, MCTS configuration, relationship penalties, and safety thresholds, etc.
-├── llm_evaluator.py # LLM evaluator, constructs prompts to call the OpenAI interface and parses the returned JSON results.
-├── Node.py # Defines a unified SuspenseNode class and SuspenseMetrics.
-├── SuspenseEvaluator.py # Suspense scorer, calculates the comprehensive suspense score of the path based on node metrics (including time, narrative, and penalty factors).
-├── StoryPathGenerator.py # Story path generator: Utilizes the Neo4j connector, MCTS search, and LLM evaluation to generate story paths, and also supports path visualization.
-├── PathOptimizer.py # Path optimizer, cleans up redundant scenes, enhances the rhythm, and inserts missing necessary elements to ensure that the generated path meets the expected constraints.
-├── NarrativeIntegrator.py # Integrates different storylines (such as the main storyline and the detective investigation storyline) to generate the final intertwined story path.
-├── MCTSController.py # Enhanced Monte Carlo Tree Search (MCTS) controller, responsible for path search, simulation, and backpropagation, and provides the best path.
-├── test_node.py # Suspense node test example, verifies basic indicator calculations and relationship penalties (such as causal relationship scoring).
-└── test_story_path.py # Story path generation test example, tests the Neo4j database connection and the integrity of path generation.
+config.py # Global configuration file, including API Key, number of retries, MCTS configuration, relationship penalties, and safety thresholds, etc.
+
+llm_evaluator.py # LLM evaluator, constructs prompts to call the OpenAI interface and parses the returned JSON results.
+
+Node.py # Defines a unified SuspenseNode class and SuspenseMetrics.
+SuspenseEvaluator.py # Suspense scorer, calculates the comprehensive suspense score of the path based on node metrics (including time, narrative, and penalty factors).
+
+StoryPathGenerator.py # Story path generator: Utilizes the Neo4j connector, MCTS search, and LLM evaluation to generate story paths, and also supports path visualization.
+
+PathOptimizer.py # Path optimizer, cleans up redundant scenes, enhances the rhythm, and inserts missing necessary elements to ensure that the generated path meets the expected constraints.
+
+NarrativeIntegrator.py # Integrates different storylines (such as the main storyline and the detective investigation storyline) to generate the final intertwined story path.
+
+MCTSController.py # Enhanced Monte Carlo Tree Search (MCTS) controller, responsible for path search, simulation, and backpropagation, and provides the best path.
+
+test_node.py # Suspense node test example, verifies basic indicator calculations and relationship penalties (such as causal relationship scoring).
+
+test_story_path.py # Story path generation test example, tests the Neo4j database connection and the integrity of path generation.
+
 ---
 
 ## Installation and Configuration
